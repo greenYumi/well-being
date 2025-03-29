@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
@@ -13,7 +15,15 @@ class MainScreen extends StatelessWidget {
         Container(
           // height: 592,
           decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 223, 223, 223),
+            gradient: LinearGradient(
+              colors: [
+                const Color.fromARGB(255, 255, 255, 255),
+                const Color.fromARGB(255, 201, 201, 201),
+              ],
+              stops: [.25, 1],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(10),
               bottomRight: Radius.circular(10),
@@ -109,12 +119,13 @@ class MainScreen extends StatelessWidget {
               ),
               // hero-board
               Container(
+                // FIXME: coba cek lagi di inspektor
                 // color: Colors.green,
                 child: Container(
                   constraints: BoxConstraints(minHeight: 400),
                   child: Row(
                     children: [
-                      // character-display, TODO: do me after
+                      // character-display
                       Expanded(
                         flex: 6,
                         child: Image.asset(
