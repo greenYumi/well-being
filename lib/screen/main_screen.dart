@@ -18,15 +18,19 @@ class MainScreen extends StatelessWidget {
             children: [
               // user-state-board
               Column(
-                spacing: 10,
+                spacing: 5,
                 children: [
                   // user-number-status
                   Row(
+                    spacing: 10,
                     children: [
                       // main-info
                       Expanded(
                         child: ListTile(
-                          leading: Icon(Icons.favorite, size: 44),
+                          leading: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Icon(Icons.favorite, size: 44),
+                          ),
                           title: Text(
                             "67",
                             style: TextStyle(fontSize: 96),
