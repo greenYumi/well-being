@@ -22,7 +22,7 @@ class MainScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
-            spacing: 20,
+            spacing: 30,
             children: [
               // user-state-board
               Column(
@@ -115,7 +115,14 @@ class MainScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       // character-display, TODO: do me after
-                      Expanded(flex: 6, child: Container()),
+                      Expanded(
+                        flex: 6,
+                        child: Image.asset(
+                          "images/bunny.png",
+                          scale: 0.8,
+                          alignment: Alignment.center,
+                        ),
+                      ),
                       //
                       // character-message
                       Expanded(
