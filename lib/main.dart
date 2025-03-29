@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       home: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Scaffold(body: MainScreen()),
+          child: Scaffold(body: SingleChildScrollView(child: MainScreen())),
         ),
       ),
     );
