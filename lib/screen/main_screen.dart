@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
@@ -10,6 +8,7 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      spacing: 20,
       children: [
         // main-Info-board
         Container(
@@ -18,7 +17,7 @@ class MainScreen extends StatelessWidget {
             gradient: LinearGradient(
               colors: [
                 const Color.fromARGB(255, 255, 255, 255),
-                const Color.fromARGB(255, 201, 201, 201),
+                const Color.fromARGB(255, 218, 218, 218),
               ],
               stops: [.25, 1],
               begin: Alignment.topCenter,
@@ -28,6 +27,17 @@ class MainScreen extends StatelessWidget {
               bottomLeft: Radius.circular(10),
               bottomRight: Radius.circular(10),
             ),
+            // TODO: pertimbangkan mau pakai shadow atau tidak
+            //
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black54,
+                offset: Offset(0, 13),
+                blurRadius: 8,
+                blurStyle: BlurStyle.outer,
+                spreadRadius: -13,
+              ),
+            ],
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -180,6 +190,29 @@ class MainScreen extends StatelessWidget {
               ),
             ],
           ),
+        ),
+        // fitur-button
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // adaptif-button
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
+              ),
+              child: ListTile(
+                leading: Icon(Icons.visibility, size: 30),
+                title: Text(
+                  "Gunakan aturan 20 - 20 - 20",
+                  style: GoogleFonts.inriaSans(fontSize: 24),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              onPressed: () {},
+            ),
+          ],
         ),
       ],
     );
