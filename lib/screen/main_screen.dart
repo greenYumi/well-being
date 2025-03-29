@@ -12,7 +12,6 @@ class MainScreen extends StatelessWidget {
       children: [
         // main-Info-board
         Container(
-          // height: 592,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
