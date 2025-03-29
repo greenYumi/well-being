@@ -111,15 +111,15 @@ class MainScreen extends StatelessWidget {
               Container(
                 // color: Colors.green,
                 child: Container(
-                  constraints: BoxConstraints(minHeight: 335),
+                  constraints: BoxConstraints(minHeight: 400),
                   child: Row(
                     children: [
                       // character-display, TODO: do me after
-                      Expanded(flex: 3, child: Container()),
+                      Expanded(flex: 6, child: Container()),
                       //
                       // character-message
                       Expanded(
-                        flex: 2,
+                        flex: 5,
                         child: Padding(
                           padding: const EdgeInsets.all(
                             20.0,
@@ -133,7 +133,7 @@ class MainScreen extends StatelessWidget {
                               Text(
                                 "kamu duduk terlalu lama, Blud. Apakah kamu di depan komputer?",
                                 style: GoogleFonts.inriaSans(
-                                  fontSize: 24,
+                                  fontSize: 26,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
