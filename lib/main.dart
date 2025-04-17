@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:well_being/provider/general_provider.dart';
 import 'package:well_being/screen/main_screen.dart';
+import 'package:well_being/screen/sport_screen.dart';
 
 void main() {
   runApp(
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       home: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Scaffold(body: SingleChildScrollView(child: MainScreen())),
+          child: Scaffold(body: SingleChildScrollView(child: SportScreen())),
         ),
       ),
     );

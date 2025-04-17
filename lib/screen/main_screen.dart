@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
+import 'package:well_being/screen/sport_screen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -210,6 +211,14 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
               onPressed: () {},
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const SportScreen()),
+                );
+              },
+              child: Text("hello"),
             ),
           ],
         ),
