@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
@@ -26,8 +28,20 @@ class MainScreen extends StatelessWidget {
                       context.read<GeneralProvider>().setTheme(value);
                     },
                     items: [
-                      DropdownMenuItem(value: true, child: Text("Terang")),
-                      DropdownMenuItem(value: false, child: Text("Gelap")),
+                      DropdownMenuItem(
+                        value: true,
+                        child: Row(
+                          spacing: 5,
+                          children: [Text("Terang"), Icon(Icons.light_mode)],
+                        ),
+                      ),
+                      DropdownMenuItem(
+                        value: false,
+                        child: Row(
+                          spacing: 5,
+                          children: [Text("Gelap"), Icon(Icons.dark_mode)],
+                        ),
+                      ),
                     ],
                   ),
                 ],
