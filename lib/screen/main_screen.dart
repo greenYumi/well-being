@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
@@ -23,6 +21,7 @@ class MainScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   DropdownButton(
+                    focusColor: Colors.transparent,
                     value: context.read<GeneralProvider>().isThemeLight,
                     onChanged: (value) {
                       context.read<GeneralProvider>().setTheme(value);
