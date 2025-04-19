@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
+import 'package:provider/provider.dart';
+import 'package:well_being/provider/general_provider.dart';
 import 'package:well_being/screen/sport_screen.dart';
 
 class MainScreen extends StatelessWidget {
@@ -13,6 +15,24 @@ class MainScreen extends StatelessWidget {
         child: Column(
           spacing: 20,
           children: [
+            Container(
+              height: 20,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  DropdownButton(
+                    value: context.read<GeneralProvider>().isThemeLight,
+                    onChanged: (value) {
+                      context.read<GeneralProvider>().setTheme(value);
+                    },
+                    items: [
+                      DropdownMenuItem(value: true, child: Text("Terang")),
+                      DropdownMenuItem(value: false, child: Text("Gelap")),
+                    ],
+                  ),
+                ],
+              ),
+            ),
             // main-Info-board
             Container(
               decoration: BoxDecoration(

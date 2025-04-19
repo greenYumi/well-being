@@ -245,4 +245,13 @@ class GeneralProvider with ChangeNotifier {
       "kategori": "Lain-lain",
     },
   ];
+
+  // Theme section (using switch button)
+  bool? isThemeLight = true;
+
+  void setTheme(bool? value) {
+    isThemeLight = value;
+
+    notifyListeners();
+  }
 }
