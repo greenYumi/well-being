@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:well_being/provider/general_provider.dart';
+import 'package:well_being/widget/activity_card.dart';
 
 class SportScreen extends StatefulWidget {
   const SportScreen({super.key});
@@ -81,19 +82,11 @@ class _SportScreenState extends State<SportScreen> {
                                   (element) => (providerFileWatch.filtering
                                       .contains(element["kategori"])),
                                 )
-                                .map(
-                                  (e) => Container(
-                                    height: 50,
-                                    child: Text("${e["nama_olahraga"]}"),
-                                  ),
-                                ),
+                                .map((e) => ActivityCard(activity: e)),
                           ]
                           : [
                             ...providerFileWatch.sports.map(
-                              (e) => Container(
-                                height: 50,
-                                child: Text("${e["nama_olahraga"]}"),
-                              ),
+                              (e) => ActivityCard(activity: e),
                             ),
                           ],
                 ),

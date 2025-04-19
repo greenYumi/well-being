@@ -58,7 +58,7 @@ class GeneralProvider with ChangeNotifier {
     "Olahraga Game",
     "Gym/Fitness",
     "Petualang",
-    "lain-lain",
+    "Lain-lain",
   ];
 
   Map<String, bool> activityCategoryStatus = {
@@ -68,7 +68,7 @@ class GeneralProvider with ChangeNotifier {
     "Olahraga Game": false,
     "Gym/Fitness": false,
     "Petualang": false,
-    "lain-lain": false,
+    "Lain-lain": false,
   };
 
   List<Map<String, dynamic>> sports = [
