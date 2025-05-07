@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:well_being/provider/app_resource_provider.dart';
 import 'package:well_being/provider/general_provider.dart';
+import 'package:well_being/provider/user_resource_provider.dart';
 import 'package:well_being/screen/main_screen.dart';
 import 'package:well_being/screen/sport_screen.dart';
 
@@ -9,6 +11,8 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => GeneralProvider()),
+        ChangeNotifierProvider(create: (context) => AppResourceProvider()),
+        ChangeNotifierProvider(create: (context) => UserResourceProvider()),
       ],
       child: MyApp(),
     ),
@@ -20,20 +24,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme:
-          (context.watch<GeneralProvider>().isThemeLight == true)
-              ? ThemeData.light()
-              : ThemeData.dark(),
-      debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
-          body: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: MainScreen(),
-          ),
-        ),
-      ),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: MainScreen());
   }
 }
