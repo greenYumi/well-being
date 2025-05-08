@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  bool _isObscure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +44,22 @@ class LoginScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 7.5),
                     TextField(
-                      obscureText: true,
+                      obscureText: _isObscure,
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.lock_person),
+                        prefixIcon: Icon(Icons.lock),
                         labelText: 'Password',
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _isObscure
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _isObscure = !_isObscure;
+                            });
+                          },
+                        ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(width: 2, color: Colors.grey),
                         ),
