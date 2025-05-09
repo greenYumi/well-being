@@ -254,4 +254,13 @@ class GeneralProvider with ChangeNotifier {
 
     notifyListeners();
   }
+
+  // Drawer
+  String charDisplay = "Bunny";
+
+  void changeCharDisplay(String char) {
+    charDisplay = char;
+    print("karakter berubah $char");
+    notifyListeners();
+  }
 }

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:well_being/provider/general_provider.dart';
 import 'package:well_being/screen/main_screen.dart';
 import 'package:well_being/screen/sport_screen.dart';
+import 'package:well_being/screen/login_screen.dart';
 
 void main() {
   runApp(
@@ -30,11 +31,10 @@ class MyApp extends StatelessWidget {
         child: Scaffold(
           body: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: MainScreen(),
+            child: LoginScreen(),
           ),
         ),
       ),
     );
   }
 }
-//Rio Jomok
