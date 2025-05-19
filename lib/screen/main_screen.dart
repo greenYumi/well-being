@@ -26,17 +26,15 @@ class MainScreen extends StatelessWidget {
         selectedItemColor: Colors.amber,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.store), label: 'Settings'),
         ],
       ),
 
       body: Container(
+        color: Colors.amber.shade100,
         height: dataRead.screenDeviceHeight,
         child: Column(
-          spacing: 1,
+          spacing: 10,
           children: [
             Expanded(
               flex: 5,
@@ -44,6 +42,7 @@ class MainScreen extends StatelessWidget {
                 elevation: 3,
                 margin: EdgeInsets.all(0),
                 child: Container(
+                  width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(16),
@@ -52,19 +51,70 @@ class MainScreen extends StatelessWidget {
                     color: Colors.white,
                   ),
 
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Expanded(child: Container(color: Colors.yellow)),
-                      ],
-                    ),
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 16,
+                          right: 16,
+                          bottom: 8,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          verticalDirection: VerticalDirection.up,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              width: double.infinity,
+                              child: Expanded(
+                                child: Card(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text("Halo, selamat pagi"),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Card(child: Icon(Icons.thermostat, size: 30)),
+                                Card(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text("Cuaca cerah"),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
             ),
-            Expanded(flex: 2, child: Container()),
+            Expanded(
+              flex: 2,
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text('Hallo pagi'),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
