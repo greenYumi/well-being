@@ -3,6 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_inner_shadow/flutter_inner_shadow.dart';
 import 'package:provider/provider.dart';
 import 'package:well_being/provider/app_resource_provider.dart';
+import 'package:well_being/widget/main_dialog_box.dart';
+import 'package:well_being/widget/user_response_button.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -16,6 +18,8 @@ class MainScreen extends StatelessWidget {
         (MediaQuery.of(context).size.height -
             kToolbarHeight -
             kBottomNavigationBarHeight);
+
+    dataRead.screenDeviceWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.greenAccent),
@@ -53,42 +57,8 @@ class MainScreen extends StatelessWidget {
 
                   child: Stack(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 16,
-                          right: 16,
-                          bottom: 8,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          verticalDirection: VerticalDirection.up,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: double.infinity,
-                              child: Expanded(
-                                child: Card(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text("Halo, selamat pagi"),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Row(
-                              children: [
-                                Card(child: Icon(Icons.thermostat, size: 30)),
-                                Card(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text("Cuaca cerah"),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
+                      // MainImage();
+                      MainDialogBox(),
                     ],
                   ),
                 ),
@@ -98,20 +68,18 @@ class MainScreen extends StatelessWidget {
               flex: 2,
               child: SizedBox(
                 width: double.infinity,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text('Hallo pagi'),
-                        ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    spacing: 5,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      UserResponseButton(response: 'Hallo selamat pagi juga'),
+                      UserResponseButton(response: 'Bangunin 10 menit lagi.'),
+                      UserResponseButton(
+                        response: 'Masih males, mau lanjut tidur',
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
