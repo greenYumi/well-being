@@ -1,20 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_inner_shadow/flutter_inner_shadow.dart';
 import 'package:provider/provider.dart';
 import 'package:well_being/provider/app_resource_provider.dart';
 import 'package:well_being/widget/main_dialog_box.dart';
 import 'package:well_being/widget/user_response_button.dart';
-
-List<Map<String, dynamic>> drawerItem = [
-  {'title': 'Changelog', 'icon': Icons.assignment},
-  {'title': 'divide'},
-  {'title': 'Settings', 'icon': Icons.settings},
-  {'title': 'Share', 'icon': Icons.share},
-  {'title': 'Feedback', 'icon': Icons.feedback},
-  {'title': 'Report', 'icon': Icons.report},
-  {'title': 'About', 'icon': Icons.info},
-];
 
 int currentIndex = 0;
 
