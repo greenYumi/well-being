@@ -6,34 +6,31 @@ import 'package:well_being/provider/app_resource_provider.dart';
 import 'package:well_being/widget/main_dialog_box.dart';
 import 'package:well_being/widget/user_response_button.dart';
 
-class MainScreen extends StatelessWidget {
+List<Map<String, dynamic>> drawerItem = [
+  {'title': 'Changelog', 'icon': Icons.assignment},
+  {'title': 'divide'},
+  {'title': 'Settings', 'icon': Icons.settings},
+  {'title': 'Share', 'icon': Icons.share},
+  {'title': 'Feedback', 'icon': Icons.feedback},
+  {'title': 'Report', 'icon': Icons.report},
+  {'title': 'About', 'icon': Icons.info},
+];
+
+int currentIndex = 0;
+
+class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     final dataRead = context.read<AppResourceProvider>();
 
-    // set screenValue
-    dataRead.screenDeviceHeight =
-        (MediaQuery.of(context).size.height -
-            kToolbarHeight -
-            kBottomNavigationBarHeight);
-
-    dataRead.screenDeviceWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.greenAccent),
-
-      bottomNavigationBar: BottomNavigationBar(
-        selectedFontSize: 0,
-        unselectedFontSize: 0,
-        selectedItemColor: Colors.amber,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.store), label: 'Settings'),
-        ],
-      ),
-
       body: Container(
         color: Colors.amber.shade100,
         height: dataRead.screenDeviceHeight,
